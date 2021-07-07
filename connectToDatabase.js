@@ -4,7 +4,7 @@ const MongoClient = require("mongodb").MongoClient;
 // connect to the db
 const url = process.env.DATABASE_URL;
 const cert = process.env.CA_CERT;
-const dbName = "tweets";
+const dbName = "admin";
 
 if (!url) throw new Error("Please enter a DATABASE_URL");
 if (!cert) throw new Error("Please enter a CA_CERT");

@@ -17,23 +17,23 @@ const port = process.env.PORT || 3000;
  * Home Page
  */
 app.get("/", async (req, res) => {
-  res.json({ message: "welcome to the new twitter!" });
+  res.json({ message: "Welcome to my hackaton Node and MongoDB!" });
 });
 
 /**
- * Get all tweets
+ * Get all data
  */
-app.get("/tweets", async (req, res) => {
+app.get("/data", async (req, res) => {
   const { db } = await connectToDatabase();
-  const tweets = await db.collection("tweets").find({}).toArray();
+  const tweets = await db.collection("Books").find({}).toArray();
   res.json({ tweets });
 });
 
 // get a single tweet
-app.get("/tweets/:tweetId", async (req, res) => {
+app.get("/Books/:Books_id", async (req, res) => {
   const { db } = await connectToDatabase();
   const tweet = await db
-    .collection("tweets")
+    .collection("Books")
     .findOne({ _id: req.params.tweetId });
   res.json({ tweet });
 });
