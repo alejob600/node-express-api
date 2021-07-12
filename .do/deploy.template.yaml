@@ -5,7 +5,7 @@ spec:
       run_command: npm start
       git:
         branch: master
-        repo_clone_url: https://github.com/do-community/node-express-api.git
+        repo_clone_url: https://github.com/alejob600/node-express-api.git
       envs:
         - key: DATABASE_URL
           scope: RUN_AND_BUILD_TIME

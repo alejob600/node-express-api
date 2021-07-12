@@ -9,15 +9,7 @@ Node APIs and MongoDB go hand-in-hand. This demo app uses:
 - [MongoDB](https://www.mongodb.com/) on [DigitalOcean](https://www.digitalocean.com/products/managed-databases/)
 - [MongoDB NodeJS Driver](https://www.npmjs.com/package/mongodb) - Connect Node to MongoDB
 
-## Routes
 
-The routes for this app are:
-
-- `GET /tweets`: Get all tweets
-- `POST /tweets`: Create a tweet
-- `GET /tweets/<tweet_id>`: Get a single tweet
-- `PUT /tweets/<tweet_id>`: Update a tweet
-- `DELETE /tweets/<tweet_id>`: Delete a tweet
 
 ## Deploying to DigitalOcean
 

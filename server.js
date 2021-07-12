@@ -34,31 +34,31 @@ app.get("/Books/:Books_id", async (req, res) => {
   const { db } = await connectToDatabase();
   const tweet = await db
     .collection("Books")
-    .findOne({ _id: req.params.tweetId });
-  res.json({ tweet });
+    .findOne({ _id: req.params._id });
+  res.json({ Book });
 });
 
 // create a tweet
-app.post("/tweets", async (req, res) => {
+app.post("/create", async (req, res) => {
   const { db } = await connectToDatabase();
-  const tweet = await db.collection("tweets").insertOne(req.body.text);
-  res.json({ tweet });
+  const tweet = await db.collection("Books").insertOne(req.body.text);
+  res.json({ Book });
 });
 
 // update a tweet
-app.put("/tweets/:tweetId", async (req, res) => {
+app.put("/Books/:_id", async (req, res) => {
   const { db } = await connectToDatabase();
   const tweet = await db
-    .collection("tweets")
-    .updateOne({ _id: req.params.tweetId }, { $set: { text: req.body.text } });
+    .collection("Books")
+    .updateOne({ _id: req.params._id }, { $set: { text: req.body.text } });
 
-  res.json({ tweet });
+  res.json({ Book });
 });
 
 // delete a tweet
-app.delete("/tweets/:tweetId", async (req, res) => {
+app.delete("/Books/:_id", async (req, res) => {
   const { db } = await connectToDatabase();
-  await db.collection("tweets").deleteOne({ _id: req.params.tweetId });
+  await db.collection("Books").deleteOne({ _id: req.params._id });
   res.code(204);
 });
 
